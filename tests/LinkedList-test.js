@@ -18,7 +18,7 @@ describe('LINKED LIST', () => {
   });
 
   describe('UNSHIFT', () => {
-    it.skip('should add items to front of list / head', () => {
+    it('should add items to front of list / head', () => {
       list.unshift('duck');
       expect(list.length).to.equal(1)
       expect(list.head.data).to.equal('duck')
