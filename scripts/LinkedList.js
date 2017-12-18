@@ -4,7 +4,6 @@ export default class LinkedList {
   constructor (length = 0, head = null) {
       this.length = length;
       this.head = head;
-      console.log(LinkedList)
   }
 
 
@@ -23,15 +22,42 @@ export default class LinkedList {
   }
 
   shift() {
-
+    if(this.length === 0) {
+      return null;
+    } else {
+      let previousHead = this.head;
+      this.head = previousHead.next;
+      this.length--;
+      return previousHead;
+    }
   }
 
-  push() {
+  push(data) {
+    const newNode = new Node(data);
+    this.length++;
 
+    if(this.head === null) {
+      this.head = newNode;
+    } else {
+      this.head = this.head.next;
+    }
+
+    this.head.next = newNode;
+    return;
   }
 
   pop() {
+    if(this.length === 0) {
+      return null;
+    } else if(this.length === 1){
+      this.head = null;
+      this.length--;
+      return this.head;
+    }
 
+    this.head.next = null;
+    this.length--;
+    return this.head;
   }
 
 }
