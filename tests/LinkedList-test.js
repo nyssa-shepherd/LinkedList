@@ -55,7 +55,7 @@ describe('LINKED LIST', () => {
       expect(list.head.next.data).to.equal('duck');
 
       // remove goose from list
-      result = list.shift();
+      let result = list.shift();
       expect(result.data).to.equal('goose')
 
       // duck should now be back at the start of the list
